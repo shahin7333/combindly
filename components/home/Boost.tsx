@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { Card, CardContent, CardDescription, CardTitle } from "../ui/card";
+import { Card, CardContent } from "../ui/card";
 
 export default function Boost() {
   const [boostData] = useState([
