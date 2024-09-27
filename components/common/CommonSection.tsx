@@ -8,7 +8,7 @@ import { FaCartShopping } from "react-icons/fa6";
 import { ScanBarcode } from "lucide-react";
 import { Card, CardContent } from "../ui/card";
 
-export default function CommonSection() {
+export default function CommonSection({ formation }: { formation: boolean }) {
   const [boostData] = useState([
     {
       icon: <FaRegClock className="text-secondary h-6 w-6" />,
@@ -34,7 +34,7 @@ export default function CommonSection() {
   return (
     <div className="max-w-[1440px] mx-auto px-4 lg:px-16 pt-36 mb-6">
       <div className="grid md:grid-cols-2 gap-12 items-center">
-        <div>
+        <div className={`${formation ? "order-last" : ""}`}>
           <div className="flex gap-4 items-center">
             <div className="p-3 rounded-lg border border-input">
               <BsFire size={28} className="text-secondary " />
@@ -52,7 +52,7 @@ export default function CommonSection() {
             </span>
           </h1>
         </div>
-        <div>
+        <div className={`${formation ? "order-first" : ""}`}>
           {/* <video
             preload="none"
             className="h-auto w-full mt-16 md:mt-0"
