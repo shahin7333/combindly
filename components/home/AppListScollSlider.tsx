@@ -4,6 +4,13 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
 
+interface Card {
+    id: number;
+    src: string;
+    label: string;
+    description: string;
+}
+
 const AppListScollSlider = () => {
     return <HorizontalScrollCarousel />;
 };
@@ -35,7 +42,7 @@ const HorizontalScrollCarousel = () => {
     );
 };
 
-const Card = ({ card, isLast }: { card: any; isLast: boolean }) => {
+const Card = ({ card, isLast }: { card: Card; isLast: boolean }) => {
     return (
         <div
             className={`flex items-center gap-10 max-w-[1400px] mx-auto ${
