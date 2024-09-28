@@ -3,7 +3,8 @@
 import { motion } from "framer-motion";
 import { ArrowRight, CircleCheck, Zap } from "lucide-react";
 import { FaDiscord } from "react-icons/fa";
-import { Button } from "../ui/button";
+import { Button } from "../../ui/button";
+import "./Banner.css";
 
 export default function Banner() {
     const containerVariants = {
@@ -83,8 +84,13 @@ export default function Banner() {
                     className="bg-clip-text text-transparent md:text-[92px] bg-gradient-to-r from-[#2856cb]  via-[#F56028] to-[#FAA22B]"
                     variants={topItemVariants}
                 >
-                    {" "}
-                    Unmatched Conversion Rates
+                    {" Unmatched Conversion Rates"
+                        .split("")
+                        .map((child, idx) => (
+                            <span className="hoverText" key={idx}>
+                                {child}
+                            </span>
+                        ))}
                 </motion.span>
             </motion.h1>
 

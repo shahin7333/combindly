@@ -1,6 +1,6 @@
 import CommonSection from "@/components/common/CommonSection";
 import AppListScollSlider from "@/components/home/AppListScollSlider";
-import Banner from "@/components/home/Banner";
+import Banner from "@/components/home/banner/Banner";
 import Boost from "@/components/home/Boost";
 import Gallery from "@/components/home/Gallery";
 
