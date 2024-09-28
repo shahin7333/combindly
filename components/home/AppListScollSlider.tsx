@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
 import { useRef } from "react";
 
 const AppListScollSlider = () => {
@@ -46,9 +47,11 @@ const Card = ({ card, isLast }: { card: any; isLast: boolean }) => {
                 className="h-auto w-[1000px] overflow-hidden bg-gradient-to-r from-[#dbffe6] dark:from-[#280e49] via-[#f3ffcc] dark:via-[#F56028] pl-4 py-4 rounded-lg"
             >
                 <div className="inset-0 z-10 grid place-content-center">
-                    <img
+                    <Image
                         src={card.src}
-                        alt="Advanced CountDown Thumbnail"
+                        alt={card.label}
+                        width={1000}
+                        height={600}
                         className="w-full h-full object-cover"
                     />
                 </div>
