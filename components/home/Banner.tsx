@@ -3,8 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, CircleCheck, Zap } from "lucide-react";
 import { FaDiscord } from "react-icons/fa";
-import { Button } from "../../ui/button";
-import "./Banner.css";
+import { Button } from "../ui/button";
 
 export default function Banner() {
     const containerVariants = {
@@ -87,7 +86,10 @@ export default function Banner() {
                     {" Unmatched Conversion Rates"
                         .split("")
                         .map((child, idx) => (
-                            <span className="hoverText" key={idx}>
+                            <span
+                                className="transition-all duration-350 hover:font-black hover:text-[rgb(255,207,63)] hover:next:font-medium hover:next:text-[rgb(199,210,254)] hover:next-next:font-light has-next-hover:font-medium has-next-hover:text-[rgb(199,210,254)] has-next-next-hover:font-light"
+                                key={idx}
+                            >
                                 {child}
                             </span>
                         ))}
