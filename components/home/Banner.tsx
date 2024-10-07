@@ -92,7 +92,11 @@ export default function Banner() {
                             >
                                 {child}
                             </span>
-                        ))}
+                        ))}{" "}
+                    {/* <SparklesText
+                        text="Unmatched Conversion Rates"
+                        className="text-[#F56028] md:text-[92px]"
+                    /> */}
                 </motion.span>
             </motion.h1>
 
