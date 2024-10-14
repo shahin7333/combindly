@@ -1,5 +1,6 @@
 import Marquee from "@/components/ui/marquee";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 const reviews = [
     {
@@ -65,10 +66,17 @@ const ReviewCard = ({
             )}
         >
             <div className="flex flex-row items-center gap-2">
-                <img
+                {/* <img
                     className="rounded-full"
                     width="32"
                     height="32"
+                    alt=""
+                    src={img}
+                /> */}
+                <Image
+                    className="rounded-full"
+                    width={32} // Use curly braces for numbers
+                    height={32} // Use curly braces for numbers
                     alt=""
                     src={img}
                 />
@@ -93,7 +101,7 @@ export function Reviews() {
                 Customer Testimonials
             </p>
             <h1 className="text-2xl md:text-5xl text-center font-medium mt-8 md:max-w-[70%] mx-auto">
-                Experience the Power of Authentic Praise: Our Customers' Stories
+                Experience the Power of Authentic Praise: Our Customers Stories
                 Illuminate the Path to Excellence!
             </h1>
             <div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden">

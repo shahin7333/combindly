@@ -4,6 +4,7 @@ const nextConfig = {
         domains: [
             "source.unsplash.com",
             "shopify-apps-images.s3.amazonaws.com",
+            "avatar.vercel.sh",
         ],
     },
 };
