@@ -3,7 +3,6 @@
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import { Button } from "../ui/button";
 
 const ThemeSwitcher = () => {
     const [mounted, setMounted] = useState(false);
@@ -13,14 +12,12 @@ const ThemeSwitcher = () => {
 
     return (
         <>
-            <Button
-                variant="ghost"
-                size="icon"
+            <button
                 aria-label="Toggle theme"
                 onClick={() =>
                     mounted && setTheme(theme === "dark" ? "light" : "dark")
                 }
-                className="p-0 hover:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 border-border"
+                className="dark:text-white bg-white hover:bg-secondary dark:bg-transparent hover:text-white px-4 py-[10px] border border-border rounded-xl font-medium"
             >
                 {mounted &&
                     (theme === "dark" ? (
@@ -28,7 +25,7 @@ const ThemeSwitcher = () => {
                     ) : (
                         <Moon className="h-5 w-5" />
                     ))}
-            </Button>
+            </button>
         </>
     );
 };

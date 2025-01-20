@@ -14,52 +14,50 @@ export default function Navbar() {
     const closeMenu = () => setIsOpen(false);
 
     return (
-        <nav className="w-full px-4 lg:px-16 sticky top-0 bg-white/80 dark:bg-[#050506]/80 backdrop-blur-sm z-[9999999]">
-            <div className="flex items-center justify-between h-[50px] border-b border-border">
+        <nav className="w-full px-4 lg:px-16 sticky top-5 backdrop-blur-sm z-[9999999]">
+            <div className="flex items-center justify-center gap-20 h-[60px] pb-4">
                 {/* Logo */}
-                <Link href="/" className="flex items-center space-x-2">
-                    <Image
-                        src={Logo}
-                        alt="Logo"
-                        width="120"
-                        height="36"
-                        priority
-                    />
-                </Link>
+                <div className="flex items-center space-x-2 px-4 py-2 border border-border rounded-xl bg-white dark:bg-[#050506]/80">
+                    <Link href="/" className="flex items-center space-x-2">
+                        <Image
+                            src={Logo}
+                            alt="Logo"
+                            width="100"
+                            height="20"
+                            priority
+                        />
+                    </Link>
+                </div>
 
                 {/* Desktop Navigation */}
-                <div className="hidden md:flex space-x-8">
-                    <Link href="#" className="text-sm font-medium">
+                <div className="hidden md:flex items-center px-4 py-2 border border-border rounded-xl bg-white dark:bg-[#050506]/80 space-x-8">
+                    <Link href="#" className=" font-medium">
                         Home
                     </Link>
-                    <Link href="#" className="text-sm font-medium">
+                    <Link href="#" className="font-medium">
                         All Apps
                     </Link>
-                    <Link href="#" className="text-sm font-medium">
+                    <Link href="#" className="font-medium">
                         Pricing
                     </Link>
-                    <Link href="#" className="text-sm font-medium">
+                    <Link href="#" className="font-medium flex items-center">
                         Affiliates
-                        <span className="px-1 py-0.5 bg-secondary rounded-sm font-semibold ml-2 text-white">
+                        <span className="px-1 py-0.5 bg-secondary rounded-sm text-xs font-semibold ml-2 text-white">
                             Upcoming
                         </span>
                     </Link>
-                    <Link href="#" className="text-sm font-medium">
+                    <Link href="#" className="font-medium">
                         Support
                     </Link>
                 </div>
 
                 {/* Right side items */}
-                <div className="flex items-center space-x-4">
+                <div className="flex items-center space-x-3">
                     {/* "Get Started" button - visible only on desktop */}
 
-                    <Button
-                        variant="outline"
-                        className="hidden md:inline-flex dark:text-white bg-transparent hover:bg-secondary hover:text-white"
-                        size="sm"
-                    >
+                    <button className="hidden md:inline-flex bg-secondary dark:bg-transparent text-white px-4 py-2  rounded-xl font-medium ">
                         Get Started
-                    </Button>
+                    </button>
                     <ThemeSwitcher />
 
                     {/* Mobile Menu */}

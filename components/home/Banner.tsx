@@ -1,9 +1,8 @@
 "use client";
 
+import HeroImage from "@/app/assets/hero.png";
 import { motion } from "framer-motion";
-import { ArrowRight, CircleCheck, Zap } from "lucide-react";
-import { FaDiscord } from "react-icons/fa";
-import { Button } from "../ui/button";
+import Image from "next/image";
 
 export default function Banner() {
     const containerVariants = {
@@ -54,12 +53,12 @@ export default function Banner() {
 
     return (
         <motion.div
-            className="max-w-[1440px] mx-auto px-4 lg:px-16"
+            className="max-w-[1440px] mx-auto px-4 lg:px-16 font-axiforma"
             initial="hidden"
             animate="visible"
             variants={containerVariants}
         >
-            <motion.div
+            {/* <motion.div
                 className="mt-24 flex flex-col items-center"
                 variants={topItemVariants}
             >
@@ -73,14 +72,14 @@ export default function Banner() {
                     Shopify Conversion Booster Combo!{" "}
                     <span className="ml-2">🚀</span>
                 </Button>
-            </motion.div>
+            </motion.div> */}
             <motion.h1
-                className="mt-10 text-3xl md:text-[80px] text-center mx-auto font-semibold md:max-w-[95%] lg:leading-[90px]"
+                className="mt-20 text-xl md:text-[64px] text-center mx-auto font-extrabold md:max-w-[95%] lg:leading-[90px] font-axiforma text-[#24223E] dark:text-white"
                 variants={topItemVariants}
             >
-                The 8-in-1 Shopify Booster for{" "}
-                <motion.span
-                    className="bg-clip-text text-transparent md:text-[92px] bg-gradient-to-r from-[#2856cb]  via-[#F56028] to-[#FAA22B]"
+                8-in-1 shopify conversion boosters
+                {/* <motion.div
+                    className="bg-clip-text text-transparent md:text-[64px] bg-gradient-to-r from-[#2856cb]  via-[#F56028] to-[#FAA22B] -mt-4 font-axiforma"
                     variants={topItemVariants}
                 >
                     {" Unmatched Conversion Rates"
@@ -93,22 +92,36 @@ export default function Banner() {
                                 {child}
                             </span>
                         ))}{" "}
-                    {/* <SparklesText
+                    <SparklesText
                         text="Unmatched Conversion Rates"
                         className="text-[#F56028] md:text-[92px]"
-                    /> */}
-                </motion.span>
+                    />
+                </motion.div> */}
             </motion.h1>
 
             <motion.div
-                className="md:max-w-[45%] mx-auto text-center pt-8 text-sm md:text-2xl"
+                className="md:max-w-[80%] mx-auto text-center pt-4 text-sm md:text-xl font-semibold font-axiforma"
                 variants={middleItemVariants}
             >
-                At Combindly, experience a seamless boost in conversion rates
-                with our all-in-one app collection – simplifying success for
-                you.
+                One app, includes 8 tools to boost your shopify store's
+                conversion rates.
             </motion.div>
             <motion.div
+                className="md:max-w-[85%] mx-auto text-center text-sm md:text-xl font-semibold font-axiforma"
+                variants={middleItemVariants}
+            >
+                Get more sales & revenue easily—faster
+            </motion.div>
+            <div className="flex justify-center items-center mt-40 blur">
+                <Image
+                    src={HeroImage}
+                    alt="Hero Image"
+                    width={1080}
+                    height={400}
+                    className="shadow-[11px_-31px_200px_10px_#c7c4ff] rounded-lg p-3 border"
+                />
+            </div>
+            {/* <motion.div
                 className="mt-14 flex justify-center items-center gap-6 flex-wrap"
                 variants={bottomItemVariants}
             >
@@ -124,33 +137,24 @@ export default function Banner() {
                 >
                     <FaDiscord className="mr-2 h-5 w-5" /> Join us on Discord
                 </Button>
-            </motion.div>
-            <motion.div
-                className="mt-10 flex justify-center items-center gap-6 flex-wrap"
+            </motion.div> */}
+            {/* <motion.div
+                className="mt-10 flex justify-center items-center gap-8 flex-wrap"
                 variants={bottomItemVariants}
             >
-                <Button
-                    variant="ghost"
-                    className="shadow dark:shadow-gray-700 md:text-base"
-                >
-                    <CircleCheck className="h-4 w-4 mr-2 text-secondary" /> Free
+                <div className="flex items-center gap-1 md:text-base">
+                    <CircleCheck className="h-6 w-6 mr-2 text-secondary" /> Free
                     7-Days trial
-                </Button>
-                <Button
-                    variant="ghost"
-                    className="shadow dark:shadow-gray-700 md:text-base"
-                >
-                    <CircleCheck className="h-4 w-4 mr-2 text-secondary" />{" "}
+                </div>
+                <div className="flex items-center gap-1 md:text-base">
+                    <CircleCheck className="h-6 w-6 mr-2 text-secondary" />{" "}
                     Built exclusively for Shopify
-                </Button>
-                <Button
-                    variant="ghost"
-                    className="shadow dark:shadow-gray-700 md:text-base"
-                >
-                    <CircleCheck className="h-4 w-4 mr-2 text-secondary" /> 24/7
+                </div>
+                <div className="flex items-center gap-1 md:text-base">
+                    <CircleCheck className="h-6 w-6 mr-2 text-secondary" /> 24/7
                     Live Support
-                </Button>
-            </motion.div>
+                </div>
+            </motion.div> */}
         </motion.div>
     );
 }
