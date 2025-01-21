@@ -1,10 +1,17 @@
 "use client";
 
+import img1 from "@/app/assets/1.png";
+import img3 from "@/app/assets/3.png";
+import img4 from "@/app/assets/4.png";
+import img5 from "@/app/assets/5.png";
+import img6 from "@/app/assets/6.png";
+import img7 from "@/app/assets/7.png";
 import { AnimatedList } from "@/components/ui/animated-list";
 import { cn } from "@/lib/utils";
+import Image, { StaticImageData } from "next/image";
 
 interface Item {
-    src: string;
+    src: string | StaticImageData;
     label: string;
     description: string;
 }
@@ -49,58 +56,51 @@ interface Item {
 const cards = [
     {
         id: 1,
-        src: "https://shopify-apps-images.s3.amazonaws.com/combindly-conversion-boosters/Advanced+CountDown+Thumbnail.jpg",
+        src: img1,
         label: "Advanced CountDown",
         description:
             "Adds urgency to your deals, making every moment a must-buy opportunity.",
     },
     {
         id: 2,
-        src: "https://shopify-apps-images.s3.amazonaws.com/combindly-conversion-boosters/Animated+add+to+cart.jpg",
+        src: img1,
         label: "Animated add to cart",
         description:
             "Bring your products to life – where every click becomes a delightful experience.",
     },
     {
         id: 3,
-        src: "https://shopify-apps-images.s3.amazonaws.com/combindly-conversion-boosters/Sticky+Add+to+Cart+Thumbnail+for+shopify.jpg",
+        src: img3,
         label: "Sticky Add to Cart",
         description:
             "Ensures your cart is always at your fingertips, ready for a seamless checkout experience!",
     },
     {
         id: 4,
-        src: "https://shopify-apps-images.s3.amazonaws.com/combindly-conversion-boosters/Sticky+Buy+Now+Thumbnail+image.jpg",
+        src: img4,
         label: "Sticky Buy Now",
         description:
             "Instant satisfaction at your fingertips – for a seamless and swift checkout experience.",
     },
     {
         id: 5,
-        src: "https://shopify-apps-images.s3.amazonaws.com/combindly-conversion-boosters/Shipping+Information.jpg",
+        src: img5,
         label: "Shipping Information",
         description:
             "Navigate hassle-free deliveries – your go-to for clear and reliable shipping details!",
     },
     {
         id: 6,
-        src: "https://shopify-apps-images.s3.amazonaws.com/combindly-conversion-boosters/Stock+Scarcity+Thumbnail.jpg",
+        src: img6,
         label: "Stock Scarcity",
         description:
             "Keeps you informed and boosts urgency for items running low.",
     },
     {
         id: 7,
-        src: "https://shopify-apps-images.s3.amazonaws.com/combindly-conversion-boosters/Related+Products.jpg",
+        src: img7,
         label: "Related Products",
         description: "Discover more you'll love – meet your perfect match.",
-    },
-    {
-        id: 8,
-        src: "https://shopify-apps-images.s3.amazonaws.com/combindly-conversion-boosters/Recently+Viwed+Products+Thumbnail.jpg",
-        label: "Recently Viwed Products",
-        description:
-            "Your browsing history at your fingertips to rediscover favorites.",
     },
 ];
 
@@ -118,9 +118,11 @@ const BannerImage = ({ src, label }: Item) => {
             )}
         >
             <div className="flex flex-row items-center gap-3">
-                <img
+                <Image
                     src={src}
                     alt={label}
+                    width={800}
+                    height={400}
                     className="w-full h-full object-fit rounded-lg"
                 />
             </div>
@@ -130,7 +132,12 @@ const BannerImage = ({ src, label }: Item) => {
 
 export function HeroBannerList({ className }: { className?: string }) {
     return (
-        <div className={cn("h-[400px] overflow-hidden p-2", className)}>
+        <div
+            className={cn(
+                "h-[350px] overflow-hidden bg-[#fff6eb] rounded-2xl",
+                className
+            )}
+        >
             <AnimatedList>
                 {cards?.map((item, idx) => (
                     <BannerImage {...item} key={idx} />

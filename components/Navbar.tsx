@@ -23,27 +23,39 @@ export default function Navbar() {
     ];
 
     return (
-        <nav className="w-full px-4 lg:px-16 sticky top-5 backdrop-blur-sm z-[9999999]">
+        <nav className="w-full px-4 lg:px-16 sticky top-5 backdrop-blur-sm z-[99999]">
             <div className="flex items-center justify-center gap-20 h-[60px] pb-4">
                 {/* Logo */}
-                <div className="flex items-center space-x-2 px-4 py-2 border border-border rounded-xl bg-white dark:bg-[#050506]/80">
-                    <Link href="/" className="flex items-center space-x-2">
+                <div className="flex items-center space-x-2 px-2 py-1.5 border border-border rounded-xl bg-white dark:bg-[#050506]/80">
+                    <Link href="/" className="flex items-center cursor-pointer">
                         <Image
                             src={Logo}
-                            alt="Logo"
-                            width="100"
-                            height="20"
+                            alt="Combindly: Shopify Conversion Boosters"
+                            width={30}
+                            height={30}
                             priority
                         />
+                        <span className="font-extrabold font-axiforma text-[#24223E]">
+                            Combindly
+                        </span>
                     </Link>
+
+                    <div className="border-l-2 border-border h-full pl-2">
+                        <p className="text-[10px] font-bold text-[#24223E] tracking-tighter">
+                            The everything
+                        </p>
+                        <p className="text-[10px] font-bold text-[#24223E] tracking-tighter">
+                            app, for Shopify.
+                        </p>
+                    </div>
                 </div>
 
                 {/* Desktop Navigation */}
-                <div className="hidden md:flex items-center px-4 py-2 border border-border rounded-xl bg-white dark:bg-[#050506]/80 space-x-8">
+                <div className="hidden md:flex items-center px-2 py-1 border border-border rounded-xl bg-white dark:bg-[#050506]/80 space-x-2 ">
                     {desktopNav.map((item) => (
                         <Link
                             href={item.href}
-                            className="font-medium"
+                            className="font-medium hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer py-1.5 px-3 rounded-xl"
                             key={item.name}
                         >
                             {item.name}
@@ -53,13 +65,10 @@ export default function Navbar() {
                 {/* Right side items */}
                 <div className="flex items-center space-x-3">
                     {/* "Get Started" button - visible only on desktop */}
-
-                    <button className="gradient-button-small px-4 py-2  rounded-xl font-medium ">
-                        See Demo
-                    </button>
-
                     <ModeToggle />
-
+                    <button className="gradient-button-small px-4 py-2  rounded-xl font-medium ">
+                        Get started
+                    </button>
                     {/* Mobile Menu */}
                     <Sheet open={isOpen} onOpenChange={setIsOpen}>
                         <SheetTrigger asChild>
