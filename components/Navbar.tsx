@@ -54,9 +54,10 @@ export default function Navbar() {
                 <div className="flex items-center space-x-3">
                     {/* "Get Started" button - visible only on desktop */}
 
-                    <button className="hidden md:inline-flex bg-secondary dark:bg-transparent text-white px-4 py-2  rounded-xl font-medium ">
-                        Get Started
+                    <button className="gradient-button-small px-4 py-2  rounded-xl font-medium ">
+                        See Demo
                     </button>
+
                     <ModeToggle />
 
                     {/* Mobile Menu */}

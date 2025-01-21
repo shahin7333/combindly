@@ -58,3 +58,28 @@
         --chart-5: 340 75% 55%;
     }
 }
+
+.gradient-button-small {
+    background: linear-gradient(
+        89deg,
+        #12d0fa -25.12%,
+        #7612fa 46.26%,
+        #fa12e3 116.7%
+    );
+    color: #fff;
+    box-shadow: 0 4px 4px 0 rgba(87, 75, 172, 0.15);
+    font-weight: 700;
+    text-decoration: none !important;
+    transform: translateY(0);
+}
+
+.gradient-button {
+    background: linear-gradient(
+        100deg,
+        #40ddff -6.08%,
+        #7612fa 25.08%,
+        #fa12e3
+    );
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.15);
+    transition: box-shadow 0.2s ease;
+}
