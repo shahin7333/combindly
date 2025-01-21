@@ -7,11 +7,20 @@ import { Menu } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import ThemeSwitcher from "./common/ThemeSwitcher";
+import ModeToggle from "./ui/mode-toggle";
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const closeMenu = () => setIsOpen(false);
+
+    // Desktop Navigation
+    const desktopNav = [
+        { name: "Home", href: "/" },
+        { name: "All Apps", href: "/apps" },
+        { name: "Pricing", href: "/pricing" },
+        { name: "Affiliates", href: "/affiliates" },
+        { name: "Support", href: "/support" },
+    ];
 
     return (
         <nav className="w-full px-4 lg:px-16 sticky top-5 backdrop-blur-sm z-[9999999]">
@@ -31,26 +40,16 @@ export default function Navbar() {
 
                 {/* Desktop Navigation */}
                 <div className="hidden md:flex items-center px-4 py-2 border border-border rounded-xl bg-white dark:bg-[#050506]/80 space-x-8">
-                    <Link href="#" className=" font-medium">
-                        Home
-                    </Link>
-                    <Link href="#" className="font-medium">
-                        All Apps
-                    </Link>
-                    <Link href="#" className="font-medium">
-                        Pricing
-                    </Link>
-                    <Link href="#" className="font-medium flex items-center">
-                        Affiliates
-                        <span className="px-1 py-0.5 bg-secondary rounded-sm text-xs font-semibold ml-2 text-white">
-                            Upcoming
-                        </span>
-                    </Link>
-                    <Link href="#" className="font-medium">
-                        Support
-                    </Link>
+                    {desktopNav.map((item) => (
+                        <Link
+                            href={item.href}
+                            className="font-medium"
+                            key={item.name}
+                        >
+                            {item.name}
+                        </Link>
+                    ))}
                 </div>
-
                 {/* Right side items */}
                 <div className="flex items-center space-x-3">
                     {/* "Get Started" button - visible only on desktop */}
@@ -58,7 +57,7 @@ export default function Navbar() {
                     <button className="hidden md:inline-flex bg-secondary dark:bg-transparent text-white px-4 py-2  rounded-xl font-medium ">
                         Get Started
                     </button>
-                    <ThemeSwitcher />
+                    <ModeToggle />
 
                     {/* Mobile Menu */}
                     <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -74,45 +73,16 @@ export default function Navbar() {
                         </SheetTrigger>
                         <SheetContent side="right">
                             <div className="flex flex-col space-y-4 mt-4">
-                                <Link
-                                    href="#"
-                                    className="text-sm font-medium hover:text-primary"
-                                    onClick={closeMenu}
-                                >
-                                    Home
-                                </Link>
-                                <Link
-                                    href="#"
-                                    className="text-sm font-medium hover:text-primary"
-                                    onClick={closeMenu}
-                                >
-                                    All Apps
-                                </Link>
-                                <Link
-                                    href="#"
-                                    className="text-sm font-medium hover:text-primary"
-                                    onClick={closeMenu}
-                                >
-                                    Pricing
-                                </Link>
-                                <Link
-                                    href="#"
-                                    className="text-sm font-medium hover:text-primary"
-                                    onClick={closeMenu}
-                                >
-                                    Affiliates
-                                </Link>
-                                <Link
-                                    href="#"
-                                    className="text-sm font-medium hover:text-primary"
-                                    onClick={closeMenu}
-                                >
-                                    Support
-                                </Link>
-                                {/* "Get Started" button - visible only in mobile sidebar */}
-                                <Button className="w-full" onClick={closeMenu}>
-                                    Get Started
-                                </Button>
+                                {desktopNav.map((item) => (
+                                    <Link
+                                        href={item.href}
+                                        className="text-sm font-medium hover:text-primary"
+                                        onClick={closeMenu}
+                                        key={item.name}
+                                    >
+                                        {item.name}
+                                    </Link>
+                                ))}
                             </div>
                         </SheetContent>
                     </Sheet>
