@@ -83,3 +83,24 @@
     box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.15);
     transition: box-shadow 0.2s ease;
 }
+
+.gradient-text {
+    background: linear-gradient(
+        89deg,
+        #12d0fa -25.12%,
+        #7612fa 46.26%,
+        #fa12e3 116.7%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.gradient-bg {
+    background: linear-gradient(
+        89deg,
+        #12d0fa -25.12%,
+        #7612fa 46.26%,
+        #fa12e3
+    );
+}

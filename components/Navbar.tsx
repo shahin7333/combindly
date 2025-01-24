@@ -35,16 +35,16 @@ export default function Navbar() {
                             height={30}
                             priority
                         />
-                        <span className="font-extrabold font-axiforma text-[#24223E]">
+                        <span className="font-extrabold font-axiforma text-[#24223E] dark:text-white">
                             Combindly
                         </span>
                     </Link>
 
                     <div className="border-l-2 border-border h-full pl-2">
-                        <p className="text-[10px] font-bold text-[#24223E] tracking-tighter">
+                        <p className="text-[10px] font-bold text-[#24223E] dark:text-white tracking-tighter">
                             The everything
                         </p>
-                        <p className="text-[10px] font-bold text-[#24223E] tracking-tighter">
+                        <p className="text-[10px] font-bold text-[#24223E] dark:text-white tracking-tighter">
                             app, for Shopify.
                         </p>
                     </div>
@@ -66,8 +66,16 @@ export default function Navbar() {
                 <div className="flex items-center space-x-3">
                     {/* "Get Started" button - visible only on desktop */}
                     <ModeToggle />
-                    <button className="gradient-button-small px-4 py-2  rounded-xl font-medium ">
-                        Get started
+                    <button
+                        className="gradient-button-small px-4 py-2  rounded-xl font-medium "
+                        onClick={() => {
+                            window.open(
+                                "https://apps.shopify.com/combindly-conversion-boosters",
+                                "_blank"
+                            );
+                        }}
+                    >
+                        Start free trial
                     </button>
                     {/* Mobile Menu */}
                     <Sheet open={isOpen} onOpenChange={setIsOpen}>

@@ -2,9 +2,11 @@
 
 import HeroImage from "@/app/assets/hero_dashboard.png";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import HeroRightShowCase from "../hero-section/HeroRightShowCase";
 
 export default function HeroSection() {
+    const router = useRouter();
     return (
         <div className="max-w-[1440px] mx-auto px-4 lg:px-16 font-axiforma mt-[72px] mb-28">
             <div>
@@ -20,7 +22,15 @@ export default function HeroSection() {
                     Get more sales & revenue easily—faster
                 </div>
                 <div className="mt-8 flex flex-col items-center">
-                    <button className="gradient-button text-white font-bold py-3 px-6 rounded-xl shadow text-xl font-axiforma border border-border transition-transform duration-200 hover:translate-y-[1px] ">
+                    <button
+                        className="gradient-button text-white font-bold py-3 px-6 rounded-xl shadow text-xl font-axiforma border border-border transition-transform duration-200 hover:translate-y-[1px] "
+                        onClick={() => {
+                            window.open(
+                                "https://apps.shopify.com/combindly-conversion-boosters",
+                                "_blank"
+                            );
+                        }}
+                    >
                         Get started. It&apos;s FREE!
                     </button>
                     <p className="text-xs font-semibold text-gray-600 mt-1">

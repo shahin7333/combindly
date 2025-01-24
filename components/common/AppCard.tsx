@@ -8,7 +8,7 @@ function AppCard(app: {
     return (
         <div
             // onClick={handleNavigateToAp}
-            className="group py-2 flex flex-col items-center bg-white shadow rounded-lg  gap-2  hover:shadow-lg cursor-pointer"
+            className="group py-2 flex flex-col items-center bg-white dark:bg-[#03346E] shadow rounded-lg  gap-2  hover:shadow-lg cursor-pointer dark:border dark:border-blue-900"
         >
             <div className="h-[60px] w-[60px] flex justify-center items-center rounded-full group-hover:bg-white ">
                 <img
@@ -20,7 +20,7 @@ function AppCard(app: {
             </div>
 
             <div className="">
-                <div className="text-base font-axiforma font-medium text-[#24223F] opacity-90 px-2 mb-1">
+                <div className="text-base font-axiforma font-medium text-[#24223F] dark:text-white opacity-90 px-2 mb-1">
                     {app?.name}
                 </div>
                 {/* <div className="w-[230px]">{app?.shortDescription}</div> */}

@@ -130,15 +130,10 @@ const BannerImage = ({ src, label }: Item) => {
     );
 };
 
-export function HeroBannerList({ className }: { className?: string }) {
+export function BannerList({ className }: { className?: string }) {
     return (
-        <div
-            className={cn(
-                "h-[350px] overflow-hidden bg-[#fff6eb] rounded-2xl",
-                className
-            )}
-        >
-            <AnimatedList>
+        <div className={cn("overflow-hidden", className)}>
+            <AnimatedList className={className}>
                 {cards?.map((item, idx) => (
                     <BannerImage {...item} key={idx} />
                 ))}
