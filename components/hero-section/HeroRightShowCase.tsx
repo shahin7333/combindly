@@ -1,9 +1,15 @@
 import { appList } from "@/app/assets/data";
+import { motion } from "framer-motion";
 import AppCard from "../common/AppCard";
 
 function HeroRightShowCase() {
     return (
-        <div className="absolute -right-10 top-30 rounded-2xl border border-white shadow ">
+        <motion.div
+            className="absolute -right-10 top-30 rounded-2xl border border-white shadow"
+            initial={{ x: 20, y: -20 }}
+            animate={{ x: 0, y: 0 }}
+            transition={{ duration: 1 }}
+        >
             <div className=" bg-white rounded-lg m-2 shadow-[0px_-19px_100px_50px_rgba(154,_117,_255,_0.25)] p-4">
                 <div className="flex flex-col items-center justify-center">
                     <h1 className="font-extrabold text-[#24223E] text-[19px]">
@@ -19,7 +25,7 @@ function HeroRightShowCase() {
                     ))}
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 }
 

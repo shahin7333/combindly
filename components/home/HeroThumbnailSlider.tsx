@@ -1,5 +1,6 @@
 "use client";
 
+import ATCBannerWhite from "@/app/assets/atc_white_banner.png";
 import { motion, useAnimationControls } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -87,18 +88,18 @@ export default function HeroThumbnailSlider() {
             }}
         >
             <motion.div
-                className="flex"
+                className="flex gap-20"
                 animate={controls}
                 transition={{ duration: 0.5, delay: 1.4 }}
             >
                 {images.map((image, index) => (
-                    <div key={index} className="flex-shrink-0 mx-1">
+                    <div key={index} className="flex-shrink-0 mx-1 ">
                         <Image
-                            src={image.src}
+                            src={ATCBannerWhite}
                             alt={image.label}
-                            width="700"
-                            height="350"
-                            className="w-full h-full rounded-lg dark:shadow-gray-700 opacity-75"
+                            width="400"
+                            height="300"
+                            className="w-full h-full rounded-lg shadow-[41px_-3px_64px_50px_rgba(140,_0,_255,_0.15)] "
                         />
                     </div>
                 ))}
