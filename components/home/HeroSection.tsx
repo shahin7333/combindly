@@ -2,11 +2,9 @@
 
 import HeroImage from "@/app/assets/hero_dashboard.png";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 import HeroRightShowCase from "../hero-section/HeroRightShowCase";
 
 export default function HeroSection() {
-    const router = useRouter();
     return (
         <div className="max-w-[1440px] mx-auto px-4 lg:px-16 font-axiforma mt-[72px] mb-28">
             <div>
