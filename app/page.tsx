@@ -1,3 +1,4 @@
+import Benefits from "@/components/home/Benefits";
 import HeroSection from "@/components/home/HeroSection";
 import MarketingList from "@/components/home/MarketingList";
 
@@ -6,6 +7,7 @@ export default function Home() {
         <div>
             <HeroSection />
             <MarketingList />
+            <Benefits />
 
             {/* <AppListScollSlider /> */}
             {/* <HeroThumbnailSlider /> */}
