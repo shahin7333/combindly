@@ -92,7 +92,7 @@ function Benefits() {
                         key={index}
                         className={`flex items-center shadow rounded-xl px-4 py-2 gap-4 cursor-pointer ${
                             selectedApp === app?.id
-                                ? "bg-purple-500 text-white"
+                                ? "gradient-bg text-white"
                                 : ""
                         }`}
                         onClick={() => setSelectedApp(app?.id)}
@@ -118,12 +118,12 @@ function Benefits() {
                 ))}
             </div>
             {selectedApp && (
-                <div className="flex items-center justify-end gap-10 mt-10 max-w-[1200px] mx-auto">
-                    <div className="p-3 gradient-bg rounded-xl">
+                <div className="flex items-center justify-start gap-10 mt-10 max-w-[1200px] mx-auto">
+                    <div className="rounded-xl shadow">
                         <Image
                             src={cards[selectedApp]?.src}
                             alt={cards[selectedApp]?.label}
-                            width={800}
+                            width={600}
                             height={300}
                             className="w-full h-full object-fit rounded-lg"
                         />
