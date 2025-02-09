@@ -53,7 +53,7 @@ export default function WriterSlide() {
   return (
     <div className="max-w-[1440px] mx-auto px-4 lg:px-16 font-axiforma mt-[72px] mb-28">
       <div className="max-w-[90%] mx-auto">
-        <div className="flex space-x-2 -mb-5">
+        <div className="flex space-x-2 md:-mb-5">
           <div className="flex items-center gap-4">
             <div className="p-5 bg-[#49CCF8] shadow-xl rounded-md">
               <FaPencilAlt className="h-6 w-6 text-white" />
