@@ -6,9 +6,9 @@ import WriterSlide from '@/components/blogs/WriterSlide'
 export default function page() {
   return (
     <div>
-        <BlogBanner/>
-        <BlogCards/>
-        <WriterSlide/>
+      <BlogBanner />
+      <BlogCards />
+      <WriterSlide />
     </div>
   )
 }

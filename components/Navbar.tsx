@@ -26,7 +26,7 @@ export default function Navbar() {
         <nav className="w-full px-4 lg:px-16 sticky top-5 backdrop-blur-sm z-[99999]">
             <div className="flex items-center justify-center gap-20 h-[60px] pb-4">
                 {/* Logo */}
-                <div className="flex items-center space-x-2 px-2 py-1.5 border border-border rounded-xl bg-white dark:bg-[#050506]/80">
+                <div className="flex items-center space-x-2 px-2 py-1.5 h-full w-10 md:h-auto md:w-auto border border-border rounded-xl bg-white dark:bg-[#050506]/80">
                     <Link href="/" className="flex items-center cursor-pointer">
                         <Image
                             src={Logo}
@@ -35,12 +35,12 @@ export default function Navbar() {
                             height={30}
                             priority
                         />
-                        <span className="font-extrabold font-axiforma text-[#24223E] dark:text-white">
+                        <span className="font-extrabold font-axiforma text-[#24223E] dark:text-white hidden md:block">
                             Combindly
                         </span>
                     </Link>
 
-                    <div className="border-l-2 border-border h-full pl-2">
+                    <div className="border-l-2 border-border h-full pl-2 hidden md:block">
                         <p className="text-[10px] font-bold text-[#24223E] dark:text-white tracking-tighter">
                             The everything
                         </p>
@@ -67,7 +67,7 @@ export default function Navbar() {
                     {/* "Get Started" button - visible only on desktop */}
                     <ModeToggle />
                     <button
-                        className="gradient-button-small px-4 py-2  rounded-xl font-medium "
+                        className="gradient-button-small text-xs md:text-base px-4 py-2 rounded-xl md:font-medium whitespace-nowrap"
                         onClick={() => {
                             window.open(
                                 "https://apps.shopify.com/combindly-conversion-boosters",
@@ -89,7 +89,7 @@ export default function Navbar() {
                                 <Menu className="h-5 w-5" />
                             </Button>
                         </SheetTrigger>
-                        <SheetContent side="right">
+                        <SheetContent side="right" className="z-[9999999]">
                             <div className="flex flex-col space-y-4 mt-4">
                                 {desktopNav.map((item) => (
                                     <Link
