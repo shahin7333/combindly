@@ -23,22 +23,20 @@ export default function FlipText({
   className,
 }: FlipTextProps) {
   return (
-    <div className="flex justify-center space-x-2">
-      <AnimatePresence mode="wait">
-        {word.split("").map((char, i) => (
-          <motion.span
-            key={i}
-            initial="hidden"
-            animate="visible"
-            exit="hidden"
-            variants={framerProps}
-            transition={{ duration, delay: i * delayMultiple }}
-            className={cn("origin-center drop-shadow-sm", className)}
-          >
-            {char}
-          </motion.span>
-        ))}
-      </AnimatePresence>
-    </div>
+    <AnimatePresence mode="wait">
+      {word.split("").map((char, i) => (
+        <motion.span
+          key={i}
+          initial="hidden"
+          animate="visible"
+          exit="hidden"
+          variants={framerProps}
+          transition={{ duration, delay: i * delayMultiple }}
+          className={cn("origin-center drop-shadow-sm", className)}
+        >
+          {char}
+        </motion.span>
+      ))}
+    </AnimatePresence>
   );
 }
