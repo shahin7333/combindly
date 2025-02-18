@@ -71,7 +71,7 @@ const cards = [
 function Benefits() {
     const [selectedApp, setSelectedApp] = useState(1);
     return (
-        <div className="max-w-[1440px] mx-auto px-4 lg:px-16 font-axiforma py-10 md:py-20">
+        <div className="max-w-[1440px] mx-auto px-4 lg:px-16 font-axiforma pt-10 pb-20 md:pt-20">
             <div className="max-w-[1200px] mx-auto">
                 <div className="text-[24px] md:text-[41px] text-[#24223E] dark:text-white font-extrabold line-clamp-2 gradient-text">
                     Save $50 Monthly with just one app
